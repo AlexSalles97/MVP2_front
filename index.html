@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image.png" href="./img/favicon.png"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>MVP</title>
+</head>
+
+<body>
+    <!-- Cabeçalho com as informações do sistema -->
+    <header>
+        <div class="title">
+            <h2>Cadastro de Países</h2>
+        </div>
+        <div class="banner">
+            <span>Desenvolvido por Alecsander Salles</span>
+        </div>
+    </header>
+
+    <!-- Opções para adicionar um novo país -->
+    <div class="newItem">
+        <input type="text" class="form-control" id="newID" placeholder="Código" readonly>
+        <input type="text" class="form-control" id="newCountry" placeholder="Digite o nome do País:">
+        <input type="text" class="form-control" id="newContinent" placeholder="Continente">
+        <input type="text" class="form-control" id="newLanguage" placeholder="Lingua">
+        <input type="text" class="form-control" id="newCapital" placeholder="Capital">
+        <input type="text" class="form-control" id="newCoin" placeholder="Moeda">
+        <span onclick="novoPais()" class="addBtn">Adicionar</span>
+    </div>
+    
+    <!-- Tabela com os países cadastrados -->
+    <section class="items">
+        <div class="table-container">
+        <table id="myTable">
+            <tr>
+                <th>ID</th>
+                <th>País</th>
+                <th>Continente</th>
+                <th>Lingua</th>
+                <th>Capital</th>
+                <th>Moeda</th>
+                <th>Opções</th>
+            </tr>
+        </table>
+        <div class="modal fade bd-example-modal-lg" id="modalEditar" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2>Editar Informações</h2>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                        <br>
+                            <div class="form-row">
+                                <div class="form-group col-md-1">
+                                    <input type="text" class="form-control" id="idmodal" readonly>
+                                </div>
+                                <div class="form-group col-md-5">
+                                    <input type="text" class="form-control" id="paismodal" placeholder="País">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="continentemodal" placeholder="Continente">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="linguamodal" placeholder="Lingua">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="capitalmodal" placeholder="Capital">
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" id="moedamodal" placeholder="Moeda">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type=" submit" class="btn btn-primary font-weight-bold m-3" data-dismiss="modal" onclick="editElement()">Atualizar</button>
+                                    <button type=" submit" class="btn btn-primary font-weight-bold m-3" data-dismiss="modal">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
